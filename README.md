@@ -1,6 +1,6 @@
 ## FocusTempo | Pomodoro Timer App
 
-This is a pomodoro-style timer app designed to help you stay focused and manage your time efficiently. It is built using html/css/js only and a [web version](https://joao-lino.github.io/focustempo/) of it is hosted on GitHub Pages.   
+This is an open-source pomodoro-style timer app designed to help you stay focused and manage your time efficiently. It is built using html/css/js only and a [web version](https://joao-lino.github.io/focustempo/) of it is hosted on GitHub Pages.   
 
 
 ## How to run
