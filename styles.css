@@ -180,27 +180,27 @@ input[type="checkbox"]:checked + label {
 
 /* primary colors */
 
-.theme-circle.gray, body.gray, body.gray input[type="checkbox"]:checked {
+.theme-circle.gray, body.gray, body.gray .sound-circle.active, body.gray input[type="checkbox"]:checked {
     background-color: var(--gray-primary-color);
 }
 
-.theme-circle.green, body.green, body.green input[type="checkbox"]:checked {
+.theme-circle.green, body.green, body.green .sound-circle.active, body.green input[type="checkbox"]:checked {
     background-color: var(--green-primary-color);
 }
 
-.theme-circle.red, body.red, body.red input[type="checkbox"]:checked {
+.theme-circle.red, body.red, body.red .sound-circle.active, body.red input[type="checkbox"]:checked {
     background-color: var(--red-primary-color);
 }
 
-.theme-circle.blue, body.blue, body.blue input[type="checkbox"]:checked {
+.theme-circle.blue, body.blue, body.blue .sound-circle.active, body.blue input[type="checkbox"]:checked {
     background-color: var(--blue-primary-color);
 }
 
-.theme-circle.brown, body.brown, body.brown input[type="checkbox"]:checked {
+.theme-circle.brown, body.brown, body.brown .sound-circle.active, body.brown input[type="checkbox"]:checked {
     background-color: var(--brown-primary-color);
 }
 
-.theme-circle.yellow, body.yellow, body.yellow input[type="checkbox"]:checked {
+.theme-circle.yellow, body.yellow, body.yellow .sound-circle.active, body.yellow input[type="checkbox"]:checked {
     background-color: var(--yellow-primary-color);
 }
 
@@ -225,7 +225,7 @@ input[type="checkbox"]:checked + label {
     background-repeat: no-repeat;
 }
 
-.theme-circle.pic4, body.pic4  {
+.theme-circle.pic4, .body.pic4  {
     background-image: url('assets/wallpapers/pic4.jpg');
     background-size: cover; 
     background-position: center; 
@@ -246,27 +246,27 @@ input[type="checkbox"]:checked + label {
     background-repeat: no-repeat;
 }
 
-body.pic1 input[type="checkbox"]:checked {
+body.pic1 .sound-circle.active, body.pic1 input[type="checkbox"]:checked {
     background-color: var(--yellow-primary-color);
 }
 
-body.pic2 input[type="checkbox"]:checked {
+body.pic2 .sound-circle.active, body.pic2 input[type="checkbox"]:checked {
     background-color: var(--blue-primary-color);
 }
 
-body.pic3 input[type="checkbox"]:checked {
+body.pic3 .sound-circle.active, body.pic3 input[type="checkbox"]:checked {
     background-color: var(--brown-primary-color);
 }
 
-body.pic4 input[type="checkbox"]:checked {
+body.pic4 .sound-circle.active, body.pic4 input[type="checkbox"]:checked {
     background-color: var(--red-primary-color);
 }
 
-body.pic5 input[type="checkbox"]:checked {
+body.pic5 .sound-circle.active, body.pic5 input[type="checkbox"]:checked {
     background-color: var(--red-primary-color);
 }
 
-body.pic6 input[type="checkbox"]:checked {
+body.pic6 .sound-circle.active, body.pic6 input[type="checkbox"]:checked {
     background-color: var(--brown-primary-color);
 }
 
@@ -322,7 +322,7 @@ body.pic6 .timer-circle {
 
 /* boxes */
 
-.general, .theme-box {
+.general, .sound-box, .theme-box {
     margin-bottom: 20px;
     padding: 20px;
     padding-top: 0;
@@ -331,7 +331,7 @@ body.pic6 .timer-circle {
     border: 1px solid #555555;
 }
 
-.theme-box {
+.sound-box {
     margin-bottom: 100px;
 }
 
@@ -340,6 +340,27 @@ body.pic6 .timer-circle {
     justify-content: space-around;
     margin-top: 20px;
     flex-wrap: wrap;
+}
+
+/* sound */
+
+.sound-options {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.sound-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin: 10px;
+    border: 1px solid #555555;
+    transition: background-color 0.3s ease;
 }
 
 /* timer */
@@ -375,7 +396,7 @@ body.pic6 .timer-circle {
     animation: countdown 1500s linear forwards;
     transition: border 2s ease;
     border: 10px solid white;
-    box-shadow: 0 0 0 1px var(--gray-secondary-color);
+    outline: 1px solid var(--gray-secondary-color);
 }
 
 .timer {
@@ -387,7 +408,6 @@ body.pic6 .timer-circle {
     border: 40px solid white;
     transition: border 2s ease;
     outline: 1px solid #555555;
-    box-shadow: 0 0 0 1px var(--gray-secondary-color);
 }
 
 .timer-settings {
@@ -562,12 +582,3 @@ body.pic6 .timer-circle {
     display: none !important;
 }
 
-@media screen and (max-width: 900px) {
-    .timer-circle::before {
-    box-shadow: 0 0 0 0px var(--gray-secondary-color);
-}
-
-.timer-circle.paused::before {
-    box-shadow: 0 0 0 0px var(--gray-secondary-color);
-}
-}
