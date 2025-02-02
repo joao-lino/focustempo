@@ -5,7 +5,7 @@ This is an open-source pomodoro-style timer app designed to help you stay focuse
 
 ## How to run
 
-The timer can be run [online](https://joao-lino.github.io/focustempo/) or locally. To run it locally, simply download this repository, extract the compressed file, and open the **`index.html`** file in your preferred browser.
+The timer can be run online or locally. To run it locally, simply download this repository, extract the compressed file, and open the **`index.html`** file in your preferred browser.
 
 ## License
 
