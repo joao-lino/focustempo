@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Focus Tempo | Pomodoro Timer App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <audio id="clickSound" src="assets/sounds/click.wav"></audio>
+    <audio id="alarmSound" src="assets/sounds/ding.mp3"></audio> 
+
+    <!--top bar-->
+
+    <nav class="top-bar">
+        <div class="main-options">
+            <label for="menu-button" class="options">
+                <img src="assets/icons/todo.svg">
+                <button class="menu-button" id="menu-button">☰</button>
+            </label>
+            <label for="theme-button" class="options">
+                <img src="assets/icons/options.svg">
+                <button class="theme-button" id="theme-button">theme</button>
+            </label>
+            <label class="support">
+                <a href="https://buy.stripe.com/bIY29t0SO9dr81yaEE" target="_blank"><img src="assets/icons/support.svg"></a>
+            </label>
+        </div>
+    </nav>
+
+    <!--left bar-->
+
+    <div class="sidebar" id="sidebar">
+        <ul class="todo-list" id="todo-list">
+            <h3>To-do</h3>
+            <hr>
+        </ul>
+        <button class="add-task-button" id="add-task-button">+ Add item</button>
+    </div>
+
+    <!--right bar-->
+    
+    <div class="theme-window" id="theme-window">
+
+        <!--general settings-->
+
+        <div class="general">
+            <h3>General</h3>
+            <hr>
+            <div class="settings-options">
+                <div class="theme-circle reset-button" title="Reset information">🗑️</div>
+                <div class="info-button">
+                    <div class="theme-circle i-button">i</div>
+                    <div class="info-tooltip">
+                        <h4>About</h4>
+                        <hr>
+                        Focus Tempo is a pomodoro-style timer app designed to help you stay focused and manage your time efficiently. Whether you're working, studying, or taking breaks, you can set customizable timers to keep track of your tasks and plan your days better. 
+                        
+                        If you like this app, please consider supporting me by clicking on the coffee icon to make a contribution. Thank you!
+                    </div>
+                </div>
+                <div class="download-button">
+                    <div class="theme-circle download">↓</div>
+                    <div class="download-tooltip">
+                        <h4>Download</h4>
+                        <hr>
+                        <a href="#"><img src="assets/icons/apple.svg"></a>
+                        <a href="#"><img src="assets/icons/windows.svg"></a>
+                        <a href="#"><img src="assets/icons/github.svg"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--timer settings-->
+
+        <div class="timer-settings">
+            <h3>Timer</h3>
+            <label for="timer-select">
+                <select id="timer-select">
+                    <option value="5">5 minutes</option>
+                    <option value="10">10 minutes</option>
+                    <option value="15">15 minutes</option>
+                    <option value="20">20 minutes</option>
+                    <option value="25" selected>25 minutes</option>
+                    <option value="30">30 minutes</option>
+                    <option value="35">35 minutes</option>
+                    <option value="40">40 minutes</option>
+                    <option value="45">45 minutes</option>
+                    <option value="50">50 minutes</option>
+                    <option value="55">55 minutes</option>
+                    <option value="60">60 minutes</option>
+                    <option value="120">2 hours</option>
+                    <option value="180">3 hours</option>
+                    <option value="240">4 hours</option>
+                    <option value="300">5 hours</option>
+                    <option value="360">6 hours</option>
+                </select>
+            </label>
+            <button id="update-timer-button">Update timer</button>
+        </div>
+
+        <!--theme-->
+
+        <div class="theme-box">
+            <h3>Theme</h3>
+            <hr>
+            <div class="theme-options">
+                <div class="theme-circle gray" data-theme="gray"></div>
+                <div class="theme-circle green" data-theme="green"></div>
+                <div class="theme-circle red" data-theme="red"></div>
+                <div class="theme-circle blue" data-theme="blue"></div>
+                <div class="theme-circle brown" data-theme="brown"></div>
+                <div class="theme-circle yellow" data-theme="yellow"></div>
+                <div class="theme-circle pic1" data-theme="pic1"></div>
+                <div class="theme-circle pic2" data-theme="pic2"></div>
+                <div class="theme-circle pic3" data-theme="pic3"></div>
+                <div class="theme-circle pic4" data-theme="pic4"></div>
+                <div class="theme-circle pic5" data-theme="pic5"></div>
+                <div class="theme-circle pic6" data-theme="pic6"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <!--timer-->
+
+    <div class="pomodoro-container">
+        <div class="timer-circle">
+            <div class="timer">25:00</div>
+        </div>
+        <button id="stop-alarm-button">stop</button>
+    </div>
+
+    <!--script-->
+    
+    <script src="script.js"></script>
+    
+</body>
+</html>

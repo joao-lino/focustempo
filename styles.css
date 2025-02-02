@@ -1,0 +1,562 @@
+/* general */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Rozha+One&display=swap');
+
+.options > img {
+    margin-top: 30px;
+    margin-right: 20px;
+}
+
+:root {
+    --gray-secondary-color: #555555;
+    --gray-primary-color: #EEEEEE;
+    --green-secondary-color: #314032;
+    --green-primary-color: #EAFFD8;
+    --red-secondary-color: #403131;
+    --red-primary-color: #FFD3D3;
+    --blue-secondary-color: #313E40;
+    --blue-primary-color: #D8F2FF;
+    --brown-secondary-color: #403531;
+    --brown-primary-color: #EBCFCC;
+    --yellow-secondary-color: #403B2A;
+    --yellow-primary-color: #FFE2B2;
+}
+
+* {
+    font-family: Inter, Poppins, Tahoma;
+    scrollbar-width: thin;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    min-width: 300px;
+    background-color: var(--gray-primary-color);
+}
+
+hr {
+    background-color: #555555;
+    opacity: 50%;
+    margin-bottom: 20px;
+}
+
+/* top bar */
+
+.top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    padding-left: 0;
+    padding-top: 0;
+    text-align: center;
+    z-index: 1000;
+}
+
+/* left bar */
+
+.sidebar {
+    position: fixed;
+    top: 80px; 
+    left: -300px; 
+    width: 250px;
+    height: calc(100% - 80px); 
+    transition: left 1s ease;
+    padding: 30px;
+    z-index: 999;
+}
+
+.sidebar h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+.todo-list {
+    list-style: none;
+    padding: 20px;
+    background-color: white;
+    border-radius: 20px;
+    border: 1px solid #555555;
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+.todo-list li {
+    margin: 10px 0;
+    display: flex;
+    cursor: default;
+    background-color: white;
+    padding: 10px;
+    align-items: flex-start; 
+}
+
+.todo-list input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #555555;
+    margin-right: 10px;
+    position: relative;
+    transition: all 0.3s ease;
+    border-radius: 50px;
+    flex-shrink: 0; 
+}
+
+input[type="checkbox"]:checked::before {
+    content: "✓";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 14px;
+}
+
+input[type="checkbox"]:checked + label {
+    text-decoration: line-through;
+    color: #666;
+}
+
+.todo-list input[type="text"] {
+    width: 100%;
+    padding: 5px;
+    font-size: 1em;
+}
+
+.add-task-button {
+    display: block;
+    width: 100%;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #555555;
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 20px;
+}
+
+.delete-task-button {
+    background: none;
+    border: none;
+    padding: 5px;
+    margin-left: auto;
+    cursor: pointer;
+}
+
+/* themes */
+
+.theme-window {
+    position: fixed;
+    top: 100px; 
+    right: -300px; 
+    width: 250px;
+    height: calc(100% - 80px);  
+    transition: right 1s ease;
+    padding: 30px;
+    z-index: 999;
+    overflow-y: auto;
+}
+
+.theme-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    cursor: pointer;
+    margin: 10px;
+    border: 1px solid #555555;
+}
+
+/* primary colors */
+
+.theme-circle.gray, body.gray, body.gray input[type="checkbox"]:checked {
+    background-color: var(--gray-primary-color);
+}
+
+.theme-circle.green, body.green, body.green input[type="checkbox"]:checked {
+    background-color: var(--green-primary-color);
+}
+
+.theme-circle.red, body.red, body.red input[type="checkbox"]:checked {
+    background-color: var(--red-primary-color);
+}
+
+.theme-circle.blue, body.blue, body.blue input[type="checkbox"]:checked {
+    background-color: var(--blue-primary-color);
+}
+
+.theme-circle.brown, body.brown, body.brown input[type="checkbox"]:checked {
+    background-color: var(--brown-primary-color);
+}
+
+.theme-circle.yellow, body.yellow, body.yellow input[type="checkbox"]:checked {
+    background-color: var(--yellow-primary-color);
+}
+
+.theme-circle.pic1, body.pic1 {
+    background-image: url("assets/wallpapers/pic1.jpg");
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+}
+
+.theme-circle.pic2, body.pic2 {
+    background-image: url('assets/wallpapers/pic2.jpg');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+}
+
+.theme-circle.pic3, body.pic3 {
+    background-image: url('assets/wallpapers/pic3.jpg');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+}
+
+.theme-circle.pic4, body.pic4  {
+    background-image: url('assets/wallpapers/pic4.jpg');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+}
+
+.theme-circle.pic5, body.pic5 {
+    background-image: url('assets/wallpapers/pic5.jpg');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+}
+
+.theme-circle.pic6, body.pic6 {
+    background-image: url('assets/wallpapers/pic6.jpg');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+}
+
+body.pic1 input[type="checkbox"]:checked {
+    background-color: var(--yellow-primary-color);
+}
+
+body.pic2 input[type="checkbox"]:checked {
+    background-color: var(--blue-primary-color);
+}
+
+body.pic3 input[type="checkbox"]:checked {
+    background-color: var(--brown-primary-color);
+}
+
+body.pic4 input[type="checkbox"]:checked {
+    background-color: var(--red-primary-color);
+}
+
+body.pic5 input[type="checkbox"]:checked {
+    background-color: var(--red-primary-color);
+}
+
+body.pic6 input[type="checkbox"]:checked {
+    background-color: var(--brown-primary-color);
+}
+
+/* secondary colors*/
+
+body.gray .timer-circle {
+    background-color: var(--gray-secondary-color);
+}
+
+body.green .timer-circle {
+    background-color: var(--green-secondary-color);
+}
+
+body.red .timer-circle {
+    background-color: var(--red-secondary-color);
+}
+
+body.blue .timer-circle {
+    background-color: var(--blue-secondary-color);
+}
+
+body.brown .timer-circle {
+    background-color: var(--brown-secondary-color);
+}
+
+body.yellow .timer-circle {
+    background-color: var(--yellow-secondary-color);
+}
+
+body.pic1 .timer-circle {
+    background-color: var(--yellow-secondary-color);
+}
+
+body.pic2 .timer-circle {
+    background-color: var(--blue-secondary-color);
+}
+
+body.pic3 .timer-circle {
+    background-color: var(--brown-secondary-color);
+}
+
+body.pic4 .timer-circle {
+    background-color: var(--red-secondary-color);
+}
+
+body.pic5 .timer-circle {
+    background-color: var(--red-secondary-color);
+}
+
+body.pic6 .timer-circle {
+    background-color: var(--brown-secondary-color);
+}
+
+/* boxes */
+
+.general, .theme-box {
+    margin-bottom: 20px;
+    padding: 20px;
+    padding-top: 0;
+    background-color: white;
+    border-radius: 20px;
+    border: 1px solid #555555;
+}
+
+.theme-box {
+    margin-bottom: 100px;
+}
+
+.theme-options {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+/* timer */
+
+.pomodoro-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 300px;
+    margin-top: 80px; 
+}
+
+.timer-circle {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: var(--gray-secondary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-top: -60px;
+}
+
+.timer-circle::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    animation: countdown 1500s linear forwards;
+    transition: border 2s ease;
+    border: 10px solid white;
+    outline: 1px solid var(--gray-secondary-color);
+}
+
+.timer {
+    font-size: 2.5em;
+    color: white;
+}
+
+.timer-circle.paused::before {
+    border: 40px solid white;
+    transition: border 2s ease;
+    outline: 1px solid #555555;
+}
+
+.timer-settings {
+    margin-bottom: 20px;
+    background-color: white;
+    border-radius: 20px;
+    border: 1px solid #555555;
+    padding: 20px;
+    padding-top: 0;
+}
+
+.timer-settings label {
+    flex-grow: 1;
+    display: block;
+    margin: 0 10px;
+    margin-bottom: 5px;
+    font-size: 1em;
+    color: #333;
+}
+
+.timer-settings input {
+    width: 95%;
+    padding: 5px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+.timer-settings button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    background-color: white;
+}
+
+#theme-button, #menu-button {
+    display: none;
+}
+
+.hide-elements .top-bar,
+.hide-elements .sidebar,
+.hide-elements .theme-window,
+.hide-elements .timer {
+    opacity: 0;
+    transition: opacity 3s ease;
+    pointer-events: none;
+}
+
+.hide-elements .timer-circle {
+    background-color: #888888;
+    transition: background-color 3s ease;
+}
+
+/* suspension */
+
+.inactivity-settings {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+}
+
+.inactivity-settings select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: white;
+}
+
+.timer-settings select {
+    width: 100%;
+    height: 45px;
+    box-sizing: border-box;
+    font-size: 1em;
+    border: 1px solid #555;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    background-color: white;
+    appearance: none;
+    cursor: pointer;
+    text-align: center;
+    text-align-last: center;  /* to align on safari too */
+    pointer-events: all !important;
+}
+
+/* general settings*/
+
+.settings-options {
+    display: flex;
+    justify-content: center;
+}
+
+.reset-button, .i-button, .download {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;
+    border: 1px solid #555555;
+    background-color: white;
+    cursor: default;
+}
+
+.info-tooltip {
+    visibility: hidden;
+    width: 200px;
+    background-color: var(--gray-secondary-color);
+    color: #fff;
+    text-align: center;
+    border-radius: 20px;
+    padding: 15px;
+    padding-top: 0;
+    position: absolute;
+    z-index: 1000;
+    transform: translateX(-50%);
+    opacity: 0;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.info-button:hover .info-tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+.info-tooltip > hr {
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+#stop-alarm-button {
+    display: none; 
+}
+
+.download-tooltip {
+    visibility: hidden;
+    width: 200px;
+    background-color: #555555;
+    color: #fff;
+    text-align: center;
+    border-radius: 20px;
+    padding: 15px;
+    padding-top: 0;
+    position: absolute;
+    z-index: 1000;
+    transform: translateX(-50%);
+    opacity: 0;
+}
+
+.download-tooltip > a {
+    margin: 0 5px;
+}
+
+.download-button:hover .download-tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+.download-tooltip > hr {
+    margin-top: -10px;
+}
+
+.download-tooltip > img {
+    margin: 5px;
+}
+
+#stop-alarm-button {
+    display: none !important;
+}
