@@ -387,6 +387,7 @@ body.pic6 .timer-circle {
     border: 40px solid white;
     transition: border 2s ease;
     outline: 1px solid #555555;
+    box-shadow: 0 0 0 1px var(--gray-secondary-color);
 }
 
 .timer-settings {
@@ -559,4 +560,14 @@ body.pic6 .timer-circle {
 
 #stop-alarm-button {
     display: none !important;
+}
+
+@media screen and (max-width: 900px) {
+    .timer-circle::before {
+    box-shadow: 0 0 0 0px var(--gray-secondary-color);
+}
+
+.timer-circle.paused::before {
+    box-shadow: 0 0 0 0px var(--gray-secondary-color);
+}
 }
