@@ -375,7 +375,7 @@ body.pic6 .timer-circle {
     animation: countdown 1500s linear forwards;
     transition: border 2s ease;
     border: 10px solid white;
-    outline: 1px solid var(--gray-secondary-color);
+    box-shadow: 0 0 0 1px var(--gray-secondary-color);
 }
 
 .timer {
