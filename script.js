@@ -43,7 +43,32 @@ function stopSounds() {
     });
 }
 
+function removeSound(sound) {
+    const audio = activeAudios.get(sound);
+    if (audio) {
+        audio.pause();
+        activeAudios.delete(sound);
+    }
+}
 
+const soundCircles = document.querySelectorAll('.sound-circle');
+soundCircles.forEach(circle => {
+    circle.addEventListener('click', () => {
+        circle.classList.toggle('active');
+        const sound = circle.dataset.sound;
+
+        if (circle.classList.contains('active')) {
+            const audio = new Audio(sound);
+            activeAudios.set(sound, audio);
+            if (isRunning) {
+                audio.loop = true;
+                audio.play();
+            }
+        } else {
+            removeSound(sound);
+        }
+    });
+});
 
 // windows
 
@@ -179,7 +204,7 @@ function updateTimerDisplay() {
     const timeString = `${minutes}:${seconds}`;
 
     timerDisplay.textContent = timeString;
-    document.title = `${timeString} - FocusTempo `;
+    document.title = `${timeString} - Focus Tempo `;
 }
 
 function resetTitle() {
