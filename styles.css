@@ -225,7 +225,7 @@ input[type="checkbox"]:checked + label {
     background-repeat: no-repeat;
 }
 
-.theme-circle.pic4, .body.pic4  {
+.theme-circle.pic4, body.pic4  {
     background-image: url('assets/wallpapers/pic4.jpg');
     background-size: cover; 
     background-position: center; 
